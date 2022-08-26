@@ -1,4 +1,19 @@
 class ApplicationController < Sinatra::Base
+    configure do 
+        set :sessions, true
+            set :session_secret, ENV['SESSION_SECRET']
+      end 
+    
+      helpers do
+         
+        def logged_in?
+          !!session[:user_id]
+        end
+    
+        def current_user 
+          User.find_by(:id => session[:user_id]) 
+        end   
+      end
 
 end
 

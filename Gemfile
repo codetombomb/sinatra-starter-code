@@ -42,3 +42,4 @@ group :development do
   # https://github.com/alexch/rerun
   gem "rerun"
 end
+gem "bcrypt", "~> 3.1"
